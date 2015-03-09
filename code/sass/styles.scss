@@ -1,0 +1,25 @@
+@import "normalize";
+
+
+body {
+	background-color: #ccc;
+}
+
+.page-container {
+  max-width: 500px;
+  border: solid 3px #333;
+  margin: 20px auto;
+  background-color: #fff;
+}
+
+h2.books-list-header {
+	text-align: center;
+	margin: 0 0 0 0;
+}
+
+.books-list {
+  margin-top: 0;
+  li {
+  	margin-bottom: 20px;
+  }
+}
