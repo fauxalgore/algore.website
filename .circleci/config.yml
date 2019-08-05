@@ -3,7 +3,7 @@ workflows:
   version: 2
   all:
     jobs:
-      - check_url:
+      - check_url
 jobs:
   check_url:
     docker:
