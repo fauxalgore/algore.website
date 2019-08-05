@@ -1,0 +1,15 @@
+version: 2.1
+workflows:
+  version: 2
+  check_url:
+    jobs:
+
+      - check_url:
+
+jobs:
+  backup_test_env:
+    docker:
+    - image: node:10.15.3
+    steps:
+    - run: curl https://www.algore.website
+
