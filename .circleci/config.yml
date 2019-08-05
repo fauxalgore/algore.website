@@ -1,0 +1,13 @@
+version: 2.1
+workflows:
+  version: 2
+  all:
+    jobs:
+      - check_url
+jobs:
+  check_url:
+    docker:
+    - image: node:10.15.3
+    steps:
+    - run: curl https://www.algore.website | grep "<title>algore.website</title>"
+
