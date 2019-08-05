@@ -11,5 +11,5 @@ jobs:
     docker:
     - image: node:10.15.3
     steps:
-    - run: curl https://www.algore.website
+    - run: curl https://www.algore.website | grep "<title>algore.website</title>"
 
