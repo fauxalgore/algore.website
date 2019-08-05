@@ -1,13 +1,11 @@
 version: 2.1
 workflows:
   version: 2
-  check_url:
+  all:
     jobs:
-
       - check_url:
-
 jobs:
-  backup_test_env:
+  check_url:
     docker:
     - image: node:10.15.3
     steps:
