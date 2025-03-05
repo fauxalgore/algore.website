@@ -15,6 +15,7 @@ jobs:
         pantheon_ssh_key: ${{ secrets.PANTHEON_SSH_KEY }}
         terminus_machine_token: ${{ secrets.TERMINUS_MACHINE_TOKEN }}
         pantheon_site: algore-website
+        target_env: dev
 
   cleanup_multidevs:
     runs-on: ubuntu-latest
