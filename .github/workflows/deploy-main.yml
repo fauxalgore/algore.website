@@ -24,6 +24,6 @@ jobs:
     - name: Delete old multidevs
       uses: stevector-streaming/dtp/github_actions/delete-closed-pull-request-multidevs@0.0.2
       with:
+        pantheon_ssh_key: ${{ secrets.PANTHEON_SSH_KEY }}
         terminus_machine_token: ${{ secrets.TERMINUS_MACHINE_TOKEN }}
-        pantheon_site: ${{ vars.PANTHEON_SITE }}
-        pantheon_ssh_key: algore-website
+        pantheon_site: algore-website
