@@ -16,11 +16,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Deploy to Pantheon
-      uses: stevector-streaming/dtp@0.1.0
+      uses: stevector-streaming/dtp@target-env-optional2
       with:
         pantheon_ssh_key: ${{ secrets.PANTHEON_SSH_KEY }}
         terminus_machine_token: ${{ secrets.TERMINUS_MACHINE_TOKEN }}
         pantheon_site: algore-website
-        target_env: "pr-${{ github.event.pull_request.number }}"
         # only bother to delete old environments when running on main branch
         delete_old_environments: ${{ github.ref == 'refs/heads/main' }}
