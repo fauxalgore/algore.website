@@ -10,20 +10,10 @@ jobs:
 
     steps:
     - name: Deploy to Pantheon
-      uses: stevector-streaming/dtp/github_actions/deploy_single_site@0.0.3
+      uses: stevector-streaming/dtp@0.1.0
       with:
         pantheon_ssh_key: ${{ secrets.PANTHEON_SSH_KEY }}
         terminus_machine_token: ${{ secrets.TERMINUS_MACHINE_TOKEN }}
         pantheon_site: algore-website
         target_env: dev
-
-  cleanup_multidevs:
-    runs-on: ubuntu-latest
-
-    steps:
-    - name: Delete old multidevs
-      uses: stevector-streaming/dtp/github_actions/delete-closed-pull-request-multidevs@0.0.3
-      with:
-        pantheon_ssh_key: ${{ secrets.PANTHEON_SSH_KEY }}
-        terminus_machine_token: ${{ secrets.TERMINUS_MACHINE_TOKEN }}
-        pantheon_site: algore-website
+        delete_old_environments: true
