@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Deploy to Pantheon
-      uses: stevector-streaming/dtp/github_actions/deploy_single_site@0.0.3
+      uses: stevector-streaming/dtp/github_actions/deploy_single_site@combine-actions
       with:
         pantheon_ssh_key: ${{ secrets.PANTHEON_SSH_KEY }}
         terminus_machine_token: ${{ secrets.TERMINUS_MACHINE_TOKEN }}
