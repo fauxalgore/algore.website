@@ -1,4 +1,4 @@
-name: Deploy PR to Pantheon
+name: Deploy to Pantheon
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.event.pull_request.number }}
@@ -22,4 +22,5 @@ jobs:
         terminus_machine_token: ${{ secrets.TERMINUS_MACHINE_TOKEN }}
         pantheon_site: algore-website
         target_env: "pr-${{ github.event.pull_request.number }}"
-        delete_old_environments: true
+        # only bother to delete old environments when running on main branch
+        delete_old_environments: ${{ github.ref == 'refs/heads/main' }}
