@@ -16,7 +16,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Deploy to Pantheon
-      uses: stevector-streaming/dtp@target-env-optional2
+      uses: stevector-streaming/dtp@0.2.0
       
       with:
         pantheon_ssh_key: ${{ secrets.PANTHEON_SSH_KEY }}
