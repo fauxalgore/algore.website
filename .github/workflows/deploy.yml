@@ -21,6 +21,7 @@ jobs:
       with:
         pantheon_ssh_key: ${{ secrets.PANTHEON_SSH_KEY }}
         # todo, convert to pantheon_machine_token
+        # https://github.com/stevector-streaming/dtp/pull/48
         terminus_machine_token: ${{ secrets.TERMINUS_MACHINE_TOKEN }}
         pantheon_site: algore-website
         # only bother to delete old environments when running on main branch
