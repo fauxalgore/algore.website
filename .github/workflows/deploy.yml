@@ -16,7 +16,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Deploy to Pantheon
-      uses: stevector/push-to-pantheon@0.x
+      uses: stevector/push-to-pantheon@0.3.0
       with:
         ssh_key: ${{ secrets.PANTHEON_SSH_KEY }}
         machine_token: ${{ secrets.TERMINUS_MACHINE_TOKEN }}
