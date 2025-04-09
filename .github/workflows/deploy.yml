@@ -15,8 +15,8 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - name: Deploy to Pantheon
-      uses: stevector-streaming/dtp@0.2.0
+    - uses: actions/checkout@v4
+    - uses: stevector/push-to-pantheon@remove-checkout
       with:
         ssh_key: ${{ secrets.PANTHEON_SSH_KEY }}
         machine_token: ${{ secrets.TERMINUS_MACHINE_TOKEN }}
