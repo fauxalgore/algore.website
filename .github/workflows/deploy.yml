@@ -15,6 +15,7 @@ jobs:
   push-to-pantheon:
     runs-on: ubuntu-latest
     steps:
+    - uses: actions/checkout@v4
     - name: Push to Pantheon
       uses: stevector/push-to-pantheon@back-to-regular-build-tools
       with:
