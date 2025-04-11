@@ -17,7 +17,7 @@ jobs:
     steps:
     - uses: actions/checkout@v4
     - name: Push to Pantheon
-      uses: stevector/push-to-pantheon@back-to-regular-build-tools
+      uses: stevector/push-to-pantheon@0.5.0
       with:
         ssh_key: ${{ secrets.PANTHEON_SSH_KEY }}
         machine_token: ${{ secrets.TERMINUS_MACHINE_TOKEN }}
