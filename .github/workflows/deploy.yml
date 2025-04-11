@@ -21,7 +21,7 @@ jobs:
     steps:
     - uses: actions/checkout@v4
     - name: Push to Pantheon
-      # checking that moving site root stuff does not break anything
+      # remove extra cd
       uses: stevector/push-to-pantheon@remove-force-pushing
       with:
         ssh_key: ${{ secrets.PANTHEON_SSH_KEY }}
