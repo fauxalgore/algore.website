@@ -21,7 +21,7 @@ jobs:
     steps:
     - uses: actions/checkout@v4
     - name: Push to Pantheon
-      # remove extra cd
+      # remove all cds
       uses: stevector/push-to-pantheon@remove-force-pushing
       with:
         ssh_key: ${{ secrets.PANTHEON_SSH_KEY }}
