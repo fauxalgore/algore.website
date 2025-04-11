@@ -21,7 +21,7 @@ jobs:
     steps:
     - uses: actions/checkout@v4
     - name: Push to Pantheon
-      # running again to test the removal of "unshallow"
+      # checking that moving site root stuff does not break anything
       uses: stevector/push-to-pantheon@remove-force-pushing
       with:
         ssh_key: ${{ secrets.PANTHEON_SSH_KEY }}
