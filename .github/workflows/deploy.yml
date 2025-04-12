@@ -12,6 +12,17 @@ on:
       - main
 
 jobs:
+  
+  repeated-terminus:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - name: Install Terminus
+      uses: pantheon-systems/terminus-github-actions@v1
+      with:
+        pantheon-machine-token: ${{ secrets.TERMINUS_MACHINE_TOKEN }}
+
+
   push-to-pantheon:
     permissions:
       deployments: write
@@ -28,3 +39,5 @@ jobs:
         site: algore-website
         # only bother to delete old environments when running on main branch
         delete_old_environments: ${{ github.ref == 'refs/heads/main' }}
+
+        
