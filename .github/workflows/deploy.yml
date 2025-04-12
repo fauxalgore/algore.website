@@ -21,7 +21,7 @@ jobs:
       uses: pantheon-systems/terminus-github-actions@v1
       with:
         pantheon-machine-token: ${{ secrets.TERMINUS_MACHINE_TOKEN }}
-        disable-cache: true
+#        disable-cache: true
 
   
   repeated-terminus:
@@ -38,4 +38,4 @@ jobs:
       uses: pantheon-systems/terminus-github-actions@v1
       with:
         pantheon-machine-token: ${{ secrets.TERMINUS_MACHINE_TOKEN }}
-        disable-cache: true
+ #       disable-cache: true
