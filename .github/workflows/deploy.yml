@@ -25,6 +25,9 @@ jobs:
 
   
   repeated-terminus:
+    strategy:
+      matrix:
+        a: [1, 2, 3, 4]
     needs: first-terminus-auth
     runs-on: ubuntu-latest
     steps:
