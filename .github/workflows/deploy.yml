@@ -12,8 +12,9 @@ on:
       - main
 
 jobs:
+
   
-  repeated-terminus:
+  first-terminus-auth:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v4
@@ -22,22 +23,13 @@ jobs:
       with:
         pantheon-machine-token: ${{ secrets.TERMINUS_MACHINE_TOKEN }}
 
-
-  push-to-pantheon:
-    permissions:
-      deployments: write
-      contents: read
-      pull-requests: read  
+  
+  repeated-terminus:
+    needs: first-terminus-auth
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v4
-    - name: Push to Pantheon
-      uses: stevector/push-to-pantheon@0.5.0
+    - name: Install Terminus
+      uses: pantheon-systems/terminus-github-actions@v1
       with:
-        ssh_key: ${{ secrets.PANTHEON_SSH_KEY }}
-        machine_token: ${{ secrets.TERMINUS_MACHINE_TOKEN }}
-        site: algore-website
-        # only bother to delete old environments when running on main branch
-        delete_old_environments: ${{ github.ref == 'refs/heads/main' }}
-
-        
+        pantheon-machine-token: ${{ secrets.TERMINUS_MACHINE_TOKEN }}
