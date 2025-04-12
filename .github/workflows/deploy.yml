@@ -32,7 +32,6 @@ jobs:
     needs: first-terminus-auth
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v4
     - run: echo ${{ matrix.a }} 
     - run: echo ${{ matrix.b }}
     - name: Install Terminus
